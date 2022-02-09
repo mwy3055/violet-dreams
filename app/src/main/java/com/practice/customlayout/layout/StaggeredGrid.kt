@@ -2,6 +2,7 @@ package com.practice.customlayout.layout
 
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -21,15 +22,19 @@ fun StaggeredGrid(
     content: @Composable () -> Unit = {}
 ) {
     Layout(
-        modifier = modifier.horizontalScroll(rememberScrollState()),
+        modifier = modifier
+            .horizontalScroll(rememberScrollState())
+            .verticalScroll(rememberScrollState()),
         content = content
     ) { measurables, constraints ->
+        // Measure Children
         val horizontalMarginPx = horizontalMargin.roundToPx()
         val verticalMarginPx = verticalMargin.roundToPx()
         val placeables = measurables.map { measurable ->
             measurable.measure(constraints)
         }
 
+        // Decide own size
         var width = 0
         var height = 0
 
@@ -58,6 +63,7 @@ fun StaggeredGrid(
             height = max(height, rowMaxHeight)
         }
 
+        // Place children
         layout(width, height) {
             var x = 0
             var y = 0
