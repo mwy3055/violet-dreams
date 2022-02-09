@@ -23,8 +23,7 @@ fun StaggeredGrid(
 ) {
     Layout(
         modifier = modifier
-            .horizontalScroll(rememberScrollState())
-            .verticalScroll(rememberScrollState()),
+            .horizontalScroll(rememberScrollState()),
         content = content
     ) { measurables, constraints ->
         // Measure Children
