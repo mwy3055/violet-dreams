@@ -1,8 +1,29 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
 }
 apply plugin: 'kotlin-android'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.practice.mylibrary'
+                artifactId = 'hsk-user-interfaces'
+                version = '0.1.0'
+            }
+
+            debug(MavenPublication) {
+                from components.debug
+                groupId = 'com.practice.mylibrary'
+                artifactId = 'hsk-user-interfaces'
+                version = '0.1.0'
+            }
+        }
+    }
+}
 
 android {
     compileSdk 31
@@ -62,6 +83,4 @@ dependencies {
     implementation "androidx.navigation:navigation-compose:2.5.0-alpha01"
     implementation "androidx.core:core-ktx:1.7.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-
-    implementation project(":mylibrary")
 }

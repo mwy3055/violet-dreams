@@ -1,8 +1,7 @@
-package com.practice.customlayout.layout
+package com.practice.mylibrary
 
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -10,7 +9,7 @@ import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.practice.customlayout.ui.theme.CustomLayoutPracticeTheme
+import com.practice.mylibrary.theme.CustomLayoutPracticeTheme
 import kotlin.math.max
 
 @Composable
