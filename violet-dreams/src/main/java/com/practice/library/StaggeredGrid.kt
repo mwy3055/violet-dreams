@@ -1,4 +1,4 @@
-package com.practice.mylibrary
+package com.practice.library
 
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.rememberScrollState
@@ -9,7 +9,7 @@ import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.practice.mylibrary.theme.CustomLayoutPracticeTheme
+import com.practice.library.theme.CustomLayoutPracticeTheme
 import kotlin.math.max
 
 @Composable

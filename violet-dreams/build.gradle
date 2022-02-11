@@ -10,15 +10,15 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.practice.mylibrary'
-                artifactId = 'hsk-user-interfaces'
+                groupId = 'com.practice.violet-dreams'
+                artifactId = 'violet-dreams'
                 version = '0.1.0'
             }
 
             debug(MavenPublication) {
                 from components.debug
-                groupId = 'com.practice.mylibrary'
-                artifactId = 'hsk-user-interfaces'
+                groupId = 'com.practice.violet-dreams'
+                artifactId = 'violet-dreams'
                 version = '0.1.0'
             }
         }

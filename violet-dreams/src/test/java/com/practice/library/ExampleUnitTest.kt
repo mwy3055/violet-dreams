@@ -1,4 +1,4 @@
-package com.practice.mylibrary
+package com.practice.library
 
 import org.junit.Test
 

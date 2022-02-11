@@ -1,4 +1,4 @@
-package com.practice.mylibrary.theme
+package com.practice.library.theme
 
 import androidx.compose.ui.graphics.Color
 

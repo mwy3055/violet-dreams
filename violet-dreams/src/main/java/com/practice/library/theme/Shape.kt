@@ -1,4 +1,4 @@
-package com.practice.customlayout.ui.theme
+package com.practice.library.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
