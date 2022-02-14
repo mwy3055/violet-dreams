@@ -16,8 +16,8 @@ import kotlin.math.max
 fun VStaggeredGrid(
     modifier: Modifier = Modifier,
     rows: Int = 5,
-    horizontalMargin: Dp = 10.dp,
-    verticalMargin: Dp = 5.dp,
+    horizontalMargin: Dp = 0.dp,
+    verticalMargin: Dp = 0.dp,
     content: @Composable () -> Unit = {}
 ) {
 //    TODO: 아이템 좌우에 블러 넣기?
