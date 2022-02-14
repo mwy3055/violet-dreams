@@ -9,11 +9,11 @@ import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.practice.library.theme.CustomLayoutPracticeTheme
+import com.practice.library.theme.VioletDreamsTheme
 import kotlin.math.max
 
 @Composable
-fun StaggeredGrid(
+fun VStaggeredGrid(
     modifier: Modifier = Modifier,
     rows: Int = 5,
     horizontalMargin: Dp = 10.dp,
@@ -95,8 +95,8 @@ private fun StaggeredGridPreview() {
     val texts =
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
             .split(" ")
-    CustomLayoutPracticeTheme {
-        StaggeredGrid {
+    VioletDreamsTheme {
+        VStaggeredGrid {
             texts.forEach { text -> Text(text = text) }
         }
     }
