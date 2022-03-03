@@ -55,7 +55,7 @@ fun VLoadingIndicator(
                 color = Color(0xFFFFFFFF),
                 topLeft = Offset(barLeft, barTop),
                 size = Size(barWidth, barHeight),
-                cornerRadius = CornerRadius(barCornerRadius, barCornerRadius),
+                cornerRadius = CornerRadius(barCornerRadius),
             )
 
             val radius = barCornerRadius * 7 / 10
