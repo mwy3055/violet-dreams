@@ -16,7 +16,7 @@ class VTicketShape(private val cornerRadius: Float) : Shape {
         density: Density
     ): Outline {
         return Outline.Generic(
-            path = drawTicketPath(size = size, cornerRadius = cornerRadius)
+            path = Path().ticketPath(size = size, cornerRadius = cornerRadius)
         )
     }
 }
@@ -25,7 +25,7 @@ class VTicketShape(private val cornerRadius: Float) : Shape {
  * Draws a ticket shape, starting from top left and turning clockwise
  * arcTo() draws a corner, lineTo() draws a straight border
  */
-fun drawTicketPath(size: Size, cornerRadius: Float): Path = Path().apply {
+fun Path.ticketPath(size: Size, cornerRadius: Float): Path = this.apply {
     reset()
     // Top left
     arcTo(

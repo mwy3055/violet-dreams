@@ -14,11 +14,11 @@ class VBezierShape : Shape {
         layoutDirection: LayoutDirection,
         density: Density
     ): Outline {
-        return Outline.Generic(path = drawBezierPath(size = size))
+        return Outline.Generic(path = Path().bezierPath(size = size))
     }
 }
 
-fun drawBezierPath(size: Size): Path = Path().apply {
+fun Path.bezierPath(size: Size): Path = this.apply {
     val curveWidth = max(size.width / 10f, 50f)
     val cubicPointWidth = max(curveWidth, 60f)
     reset()

@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.scale
@@ -20,7 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.practice.library.shape.VTicketShape
-import com.practice.library.shape.drawTicketPath
+import com.practice.library.shape.ticketPath
 import com.practice.library.theme.Teal200
 import com.practice.library.theme.VioletDreamsTheme
 
@@ -49,7 +50,7 @@ fun VTicket(
             .drawBehind {
                 scale(scale = 0.9f) {
                     drawPath(
-                        path = drawTicketPath(size = size, cornerRadius = 24.dp.toPx()),
+                        path = Path().ticketPath(size = size, cornerRadius = 24.dp.toPx()),
                         color = Teal200,
                         style = Stroke(
                             width = 2.dp.toPx(),
