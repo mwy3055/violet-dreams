@@ -5,18 +5,20 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.practice.customlayout.screen.VPolygonScreen
 import com.practice.library.VStaggeredGrid
 
 // Number of layouts
 val layoutNames = listOf(
     "Staggered Grid",
+    "Regular Polygon"
 )
 
 /*
@@ -43,6 +45,26 @@ fun CustomLayoutPracticeNavigation() {
                     Text(text = text)
                 }
             }
+        }
+        composable("layout1") {
+            var sides by remember { mutableStateOf(3) }
+            var lineWidth by remember { mutableStateOf(10f) }
+            var progress by remember { mutableStateOf(1f) }
+
+            VPolygonScreen(
+                sides = sides,
+                onSidesChange = {
+                    sides = it
+                },
+                lineWidth = lineWidth,
+                onLineWidthChange = {
+                    lineWidth = it
+                },
+                progress = progress,
+                onProgressChange = {
+                    progress = it
+                }
+            )
         }
     }
 }
