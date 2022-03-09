@@ -1,7 +1,6 @@
 package com.practice.library.shape
 
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Outline
 import androidx.compose.ui.graphics.Path
@@ -44,6 +43,9 @@ fun Path.polygonPath(sides: Int, radius: Float, size: Size) = this.apply {
     }
     // center: (centerX, centerY)
     translate(Offset(x = size.width / 2, y = size.height / 2))
+    if (sides == 3) {
+        translate(Offset(x = size.width / 10, y = 0f))
+    }
     close()
 }
 
