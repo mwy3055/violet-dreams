@@ -14,11 +14,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.practice.customlayout.screen.VPolygonScreen
 import com.practice.library.VStaggeredGrid
+import com.practice.library.experimental.VBarrage
 
 // Number of layouts
 val layoutNames = listOf(
     "Staggered Grid",
-    "Regular Polygon"
+    "Regular Polygon",
+    "Barrage"
 )
 
 /*
@@ -64,6 +66,11 @@ fun CustomLayoutPracticeNavigation() {
                 onProgressChange = {
                     progress = it
                 }
+            )
+        }
+        composable("layout2") {
+            VBarrage(
+                modifier = Modifier.fillMaxSize()
             )
         }
     }
