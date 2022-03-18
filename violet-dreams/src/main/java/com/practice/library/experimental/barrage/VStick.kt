@@ -1,4 +1,4 @@
-package com.practice.library.experimental
+package com.practice.library.experimental.barrage
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.material.MaterialTheme

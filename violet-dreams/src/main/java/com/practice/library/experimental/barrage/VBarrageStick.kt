@@ -1,4 +1,4 @@
-package com.practice.library.experimental
+package com.practice.library.experimental.barrage
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.Animatable
