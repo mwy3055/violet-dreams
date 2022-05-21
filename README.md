@@ -1,3 +1,4 @@
+[![](https://jitpack.io/v/mwy3055/violet-dreams.svg)](https://jitpack.io/#mwy3055/violet-dreams)
 # _Violet dreams_
 Colorful, Clear and Convenient UI library for Jetpack Compose
 
