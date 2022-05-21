@@ -12,6 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Custom Layout Practice"
+rootProject.name = "Violet Dreams"
 include ':app'
 include ':violet-dreams'
