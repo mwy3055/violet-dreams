@@ -1,7 +1,28 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android'
+    id 'maven-publish'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.mwy3055'
+                artifactId = 'violet-dreams-ui'
+                version = "$violet_dreams_version"
+            }
+
+            debug(MavenPublication) {
+                from components.debug
+                groupId = 'com.mwy3055'
+                artifactId = 'violet-dreams-ui'
+                version = "$violet_dreams_version"
+            }
+        }
+    }
 }
 
 android {
@@ -10,13 +31,9 @@ android {
     defaultConfig {
         minSdk 23
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -47,11 +64,6 @@ android {
 
 dependencies {
     implementation project(':violet-dreams-core')
-    implementation project(':violet-dreams-ui')
-    implementation project(':violet-dreams-experimental')
-
-    // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     // AndroidX core
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -59,17 +71,25 @@ dependencies {
     // AndroidX KTX
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
 
-    // Compose
-    implementation "androidx.compose.ui:ui:$compose_version"
+    // Compose main dependencies
+    implementation "androidx.compose.animation:animation:$compose_version"
+    implementation "androidx.compose.compiler:compiler:$compose_version"
+    implementation "androidx.compose.foundation:foundation:$compose_version"
     implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.runtime:runtime:$compose_version"
+    implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    implementation 'androidx.activity:activity-compose:1.4.0'
-    implementation "androidx.navigation:navigation-compose:2.5.0-rc01"
 
-    // Test dependencies
+    // Compose minor dependencies
+    implementation "androidx.navigation:navigation-compose:2.5.0-rc01"
+    implementation 'androidx.activity:activity-compose:1.4.0'
+
+    // Compose test and debug dependencies
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0-M1'
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }

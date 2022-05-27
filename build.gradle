@@ -2,6 +2,7 @@ buildscript {
     ext {
         compose_version = '1.1.1'
         kotlin_version = '1.6.10'
+        violet_dreams_version = '0.1.2'
     }
     repositories {
         mavenCentral()

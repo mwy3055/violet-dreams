@@ -11,7 +11,7 @@ import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.mwy3055.violetdreams.theme.VioletDreamsTheme
+import com.mwy3055.violetdreams.core.theme.VioletDreamsTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

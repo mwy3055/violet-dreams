@@ -13,8 +13,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.mwy3055.vdexample.screen.VPolygonScreen
-import com.mwy3055.violetdreams.VStaggeredGrid
-import com.mwy3055.violetdreams.experimental.VBarrage
+import com.mwy3055.violetdreams.experimental.barrage.VBarrage
+import com.mwy3055.violetdreams.ui.component.VStaggeredGrid
 
 // Number of layouts
 val layoutNames = listOf(

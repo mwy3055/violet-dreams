@@ -10,8 +10,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.mwy3055.violetdreams.experimental.VPolygon
-import com.mwy3055.violetdreams.theme.VioletDreamsTheme
+import com.mwy3055.violetdreams.VPolygon
+import com.mwy3055.violetdreams.core.theme.VioletDreamsTheme
 import kotlin.math.roundToInt
 
 @Composable

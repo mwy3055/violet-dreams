@@ -14,4 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Violet Dreams"
 include ':app'
-include ':violet-dreams'
+include ':violet-dreams-core'
+include ':violet-dreams-ui'
+include ':violet-dreams-experimental'
