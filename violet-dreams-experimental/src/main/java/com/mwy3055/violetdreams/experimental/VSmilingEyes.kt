@@ -1,4 +1,4 @@
-package com.mwy3055.violetdreams
+package com.mwy3055.violetdreams.experimental
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.padding
@@ -17,7 +17,6 @@ import com.mwy3055.violetdreams.core.theme.VioletDreamsTheme
 
 @Composable
 fun VSmilingEyes(modifier: Modifier = Modifier) {
-    val color = MaterialTheme.colors.primary
     Canvas(
         modifier = modifier.size(400.dp),
         onDraw = {
@@ -29,20 +28,6 @@ fun VSmilingEyes(modifier: Modifier = Modifier) {
                 style = Stroke(width = width * 0.02f)
             )
 
-//            drawLine(
-//                color = color,
-//                start = Offset(width / 2, 0f),
-//                end = Offset(width / 2, height),
-//                strokeWidth = 10f,
-//            )
-//
-//            drawLine(
-//                color = color,
-//                start = Offset(0f, height / 2),
-//                end = Offset(width, height / 2),
-//                strokeWidth = 10f,
-//            )
-
             val leftEyePath = Path().apply {
                 moveTo(width / 16 * 4, height / 16 * 5)
                 lineTo(width / 16 * 5, height / 16 * 4)
@@ -53,7 +38,6 @@ fun VSmilingEyes(modifier: Modifier = Modifier) {
                 color = Color.Black,
                 style = Stroke(width = 20f),
             )
-
 
             val rightEyePath = Path().apply {
                 moveTo(width / 16 * 10, height / 16 * 5)

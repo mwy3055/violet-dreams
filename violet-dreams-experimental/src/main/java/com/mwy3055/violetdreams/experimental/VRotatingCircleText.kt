@@ -11,6 +11,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mwy3055.violetdreams.core.theme.VioletDreamsTheme
+import com.mwy3055.violetdreams.experimental.VCircleText
 
 @Composable
 fun VRotatingCircleText(

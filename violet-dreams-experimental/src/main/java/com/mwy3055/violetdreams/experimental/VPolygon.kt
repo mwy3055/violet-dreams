@@ -1,4 +1,4 @@
-package com.mwy3055.violetdreams
+package com.mwy3055.violetdreams.experimental
 
 import android.graphics.DashPathEffect
 import androidx.compose.animation.core.LinearEasing
@@ -52,7 +52,7 @@ fun VPolygon(
 
             val paint = Paint().asFrameworkPaint().apply {
                 color = primaryColor
-                strokeWidth = lineWidth?.value ?: radius / 20f
+                strokeWidth = lineWidth?.value ?: (radius / 20f)
                 style = android.graphics.Paint.Style.STROKE
                 pathEffect = dashPathEffect
             }
