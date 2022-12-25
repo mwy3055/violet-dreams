@@ -1,4 +1,4 @@
-package com.mwy3055.violetdreams
+package com.mwy3055.violetdreams.experimental
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.layout.Box
@@ -13,7 +13,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mwy3055.violetdreams.ui.element.VButton
 import com.mwy3055.violetdreams.core.theme.VioletDreamsTheme
-import com.mwy3055.violetdreams.experimental.VCircleText
 
 @Composable
 fun VRotatingPane(

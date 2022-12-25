@@ -1,4 +1,4 @@
-package com.mwy3055.violetdreams
+package com.mwy3055.violetdreams.experimental
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -11,7 +11,6 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mwy3055.violetdreams.core.theme.VioletDreamsTheme
-import com.mwy3055.violetdreams.experimental.VCircleText
 
 @Composable
 fun VRotatingCircleText(
