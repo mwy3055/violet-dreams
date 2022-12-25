@@ -4,6 +4,8 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
+import androidx.compose.material.ripple.LocalRippleTheme
+import androidx.compose.material.ripple.RippleTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
@@ -23,40 +25,41 @@ fun VButton(
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-//    elevation: ButtonElevation? = ButtonDefaults.elevation(),
+    rippleTheme: RippleTheme = LocalRippleTheme.current,
     border: BorderStroke = BorderStroke(width = 1.dp, color = MaterialTheme.colors.primaryVariant),
     colors: ButtonColors = ButtonDefaults.buttonColors(),
     contentPadding: PaddingValues = ButtonDefaults.ContentPadding,
     content: @Composable RowScope.() -> Unit
 ) {
     val contentColor by colors.contentColor(enabled)
-    Surface(
-        onClick = onClick,
-        modifier = modifier.graphicsLayer {
-            shape = VBezierShape()
-            clip = true
-        },
-        enabled = enabled,
-        shape = VBezierShape(),
-        color = colors.backgroundColor(enabled = enabled).value,
-        contentColor = contentColor.copy(alpha = 1f),
-        border = border,
-//        elevation = elevation?.elevation(enabled, interactionSource)?.value ?: 0.dp,
-        interactionSource = interactionSource
-    ) {
-        CompositionLocalProvider(LocalContentAlpha provides contentColor.alpha) {
-            ProvideTextStyle(value = MaterialTheme.typography.button) {
-                Row(
-                    modifier = Modifier
-                        .defaultMinSize(
-                            minWidth = ButtonDefaults.MinWidth,
-                            minHeight = ButtonDefaults.MinHeight
-                        )
-                        .padding(contentPadding),
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically,
-                    content = content
-                )
+    CompositionLocalProvider(LocalRippleTheme provides rippleTheme) {
+        Surface(
+            onClick = onClick,
+            modifier = modifier.graphicsLayer {
+                shape = VBezierShape()
+                clip = true
+            },
+            enabled = enabled,
+            shape = VBezierShape(),
+            color = colors.backgroundColor(enabled = enabled).value,
+            contentColor = contentColor.copy(alpha = 1f),
+            border = border,
+            interactionSource = interactionSource
+        ) {
+            CompositionLocalProvider(LocalContentAlpha provides contentColor.alpha) {
+                ProvideTextStyle(value = MaterialTheme.typography.button) {
+                    Row(
+                        modifier = Modifier
+                            .defaultMinSize(
+                                minWidth = ButtonDefaults.MinWidth,
+                                minHeight = ButtonDefaults.MinHeight
+                            )
+                            .padding(contentPadding),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically,
+                        content = content
+                    )
+                }
             }
         }
     }
